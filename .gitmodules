@@ -1,6 +1,3 @@
 [submodule "ApollonianGE/vendor/spdlog"]
 	path = ApollonianGE/vendor/spdlog
 	url = https://github.com/gabime/spdlog
-[submodule "ApollonianGE/vendor/GLFW"]
-	path = ApollonianGE/vendor/GLFW
-	url = https://github.com/arxeous/glfw
