@@ -12,5 +12,14 @@
 	#error Apollonian Curren tly only supports Windows
 #endif
 
+#ifdef AGEZ_ENABLE_ASSERTS
+	#define AGEZ_ASSERT(x, ...) {if(!(x) {AGEZ_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+	#define AGEZ_CORE_ASSERT(x, ...) {if(!(x)){AGEZ_CORE_ASSERT("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+#else
+	#define AGEZ_ASSERT(x, ...)
+	#define AGEZ_CORE_ASSERT(x, ...)
+#endif
+
+#define BIT(x) (1 << x)
 
 
