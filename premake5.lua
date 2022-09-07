@@ -12,10 +12,12 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 -- Include directories relative to root foder (solution directory)
 IncludeDir = {}
 IncludeDir["GLFW"] = "ApollonianGE/vendor/GLFW/include"
+IncludeDir["glad"] = "ApollonianGE/vendor/glad/include"
 
 -- This include will include the premake in the GLFW 
 -- Sorta like c++ where we just copy and paste that file into this one
 include "ApollonianGE/vendor/GLFW"
+include "ApollonianGE/vendor/glad"
 
 project "ApollonianGE"
 	location "ApollonianGE"
@@ -36,12 +38,14 @@ project "ApollonianGE"
 	includedirs {
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.glad}"
 	}
 
 	links {
 		"GLFW",
-		"opengl32.lib"
+		"opengl32.lib",
+		"glad"
 	}
 
 	filter "system:windows"
@@ -51,7 +55,8 @@ project "ApollonianGE"
 
 		defines {
 			"AGEZ_PLATFORM_WINDOWS", 
-			"AGEZ_BUILD_DLL"
+			"AGEZ_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands {
@@ -59,16 +64,19 @@ project "ApollonianGE"
 		}
 
 	filter "configurations:Debug"
-		defines "HZ_DEBUG"
+		defines "AGEZ_DEBUG"
 		symbols "On"
+		buildoptions "/MDd"
 
 	filter "configurations:Release"
-		defines "HZ_RELEASE"
+		defines "AGEZ_RELEASE"
 		optimize "On"
+		buildoptions "/MD"
 
 	filter "configurations:Dist"
-		defines "HZ_DIST"
+		defines "AGEZ_DIST"
 		optimize "On"
+		buildoptions "/MD"
 
 
 project "Sandbox"
@@ -102,15 +110,18 @@ project "Sandbox"
 		"ApollonianGE"
 	}
 	filter "configurations:Debug"
-		defines "HZ_DEBUG"
+		defines "AGEZ_DEBUG"
 		symbols "On"
+		buildoptions "/MDd"
 
 	filter "configurations:Release"
-		defines "HZ_RELEASE"
+		defines "AGEZ_RELEASE"
 		optimize "On"
+		buildoptions "/MD"
 
 	filter "configurations:Dist"
-		defines "HZ_DIST"
+		defines "AGEZ_DIST"
 		optimize "On"
+		buildoptions "/MD"
 	
 	

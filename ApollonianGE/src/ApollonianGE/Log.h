@@ -26,7 +26,7 @@ namespace ApollonianGE {
 
 
 // ... is just a macro for variable number arguements. __VA_ARGS__ is just us
-// forwarding this to our function
+// forwarding these variable args in the macro to our function
 
 // one reason we want these as macros is the ability to strip out this code in distribution
 // We would simply need to check #if dist build -> #define AGEZ_CORE_TRACE

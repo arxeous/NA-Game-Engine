@@ -9,7 +9,7 @@
 		#define AGEZ_API __declspec(dllimport)					// Otherwise we we import from our library to our application (i.e. the sandbox test project)
 	#endif
 #else
-	#error Apollonian Curren tly only supports Windows
+	#error Apollonian Currently only supports Windows
 #endif
 
 #ifdef AGEZ_ENABLE_ASSERTS

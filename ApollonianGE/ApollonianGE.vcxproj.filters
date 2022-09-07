@@ -37,6 +37,12 @@
     <ClInclude Include="src\ApollonianGE\Events\MouseEvent.h">
       <Filter>ApollonianGE\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\ApollonianGE\Layer.h">
+      <Filter>ApollonianGE</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ApollonianGE\LayerStack.h">
+      <Filter>ApollonianGE</Filter>
+    </ClInclude>
     <ClInclude Include="src\ApollonianGE\Log.h">
       <Filter>ApollonianGE</Filter>
     </ClInclude>
@@ -52,9 +58,13 @@
     <ClCompile Include="src\ApollonianGE\Application.cpp">
       <Filter>ApollonianGE</Filter>
     </ClCompile>
+    <ClCompile Include="src\ApollonianGE\LayerStack.cpp">
+      <Filter>ApollonianGE</Filter>
+    </ClCompile>
     <ClCompile Include="src\ApollonianGE\Log.cpp">
       <Filter>ApollonianGE</Filter>
     </ClCompile>
+    <ClCompile Include="src\Layer.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
       <Filter>Platform\Windows</Filter>
     </ClCompile>
